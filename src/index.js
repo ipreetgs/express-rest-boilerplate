@@ -7,7 +7,10 @@ const mongoose = require('./config/mongoose');
 
 // open mongoose connection
 mongoose.connect();
-
+require('dotenv-safe').config({
+    allowEmptyValues: true
+  });
+  
 // listen to requests
 app.listen(port, () => logger.info(`server started on port ${port} (${env})`));
 
